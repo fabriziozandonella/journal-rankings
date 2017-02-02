@@ -20,15 +20,20 @@ import com.f1000.journalrankings.model.Journal;
  */
 public class JournalRankingsServiceImpl implements JournalRankingsService {
 	private Logger logger = LogManager.getLogger(JournalRankingsServiceImpl.class);
+
 	@Autowired
 	DataManager dataManager;
-	
-	/* (non-Javadoc)
-	 * @see com.f1000.journalrankings.service.JournalRankingsService#rankJournals(java.util.ArrayList)
+
+	/**
+	 * Checks if the data into the list passed as param, are valid
+	 * 
+	 * @param ArrayList<Journal> 
+	 * @return ArrayList<Journal>
+	 * @throws Exception
 	 */
 	@Override
 	public ArrayList<Journal> rankJournals(ArrayList<Journal> journalList) throws Exception {
-		 
+
 		ArrayList<Journal> jList = journalList;
 		try{
 			if(null== jList ){
@@ -39,21 +44,15 @@ public class JournalRankingsServiceImpl implements JournalRankingsService {
 			}		
 
 			for(Journal j : jList){
-
 				if(null == j.getJournalName() || "".equalsIgnoreCase(j.getJournalName())){
 					throw new Exception("Journal Name is undefined");
 				}	
-
 			}
-
-
 
 		}catch(Exception ex){
 			logger.error("JournalRankingsServiceImpl.rankJournals Error:" + ex.getStackTrace());
 			throw new Exception("JournalRankingsServiceImpl.rankJournals Error:" + ex.getStackTrace());
 		}
-
-
 
 		return dataManager.rankJournals(jList);
 	}

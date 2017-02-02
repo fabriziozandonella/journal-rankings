@@ -17,10 +17,14 @@ import com.f1000.journalrankings.model.Journal;
 
 public class DataManagerImpl implements DataManager {
 
-	/* (non-Javadoc)
-	 * @see com.f1000.journalrankings.backend.DataManager#rankJournals(java.util.ArrayList)
+	/**
+	 * The service implementation:
+	 * checks if the data into the list passed as param, are valid
+	 * 
+	 * @param ArrayList<Journal> 
+	 * @return ArrayList<Journal>
+	 * @throws Exception
 	 */
-
 	@Override
 	public ArrayList<Journal> rankJournals(ArrayList<Journal> journalList) {
 
@@ -30,12 +34,10 @@ public class DataManagerImpl implements DataManager {
 
 
 		// Review exclusion
-		for (int i=j.size()-1;i>=0;i--) {    
-			// Do something    
+		for (int i=j.size()-1;i>=0;i--) {     
 			if(j.get(i).isReview())
 				j.remove(i);
 		}
-
 
 		// Sort By Score and in case of equal rank (score) the sort is by Name
 		Collections.sort(j, new Comparator<Journal>() {
@@ -58,10 +60,6 @@ public class DataManagerImpl implements DataManager {
 
 			index++;
 		}
-
-
-
-
 
 		return j;
 	}
