@@ -18,13 +18,7 @@ The Service interface "JournalRankingsService" provides the method:
 
 ----------
 
-##### Project Structure
-![JournalRankings project structure](JournalRankings/doc/project-structure.jpg)
 
-----------
-
-##### Class diagram
-![JournalRankings class diagram](JournalRankings/doc/class-diagram.jpg)
 
 ----------
 
