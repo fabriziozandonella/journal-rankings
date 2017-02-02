@@ -37,6 +37,8 @@ maven clean install
 ```
 maven will compile and will execute the test provided for the scenarios requested.
 
+> **Note:** The version of Java is 1.7 
+
 ----------
 
 ###  Documentation
@@ -44,9 +46,3 @@ maven will compile and will execute the test provided for the scenarios requeste
 
 ----------
 
-###  Future developments
-Convertion of the project as a Microservice, providing: 
- * a RESTful API,
- * a capability to read the data as JSon object
- 
-----------
