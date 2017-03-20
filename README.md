@@ -1,4 +1,4 @@
-#JournalRankings application
+# JournalRankings application
 
 ###  Architecture
 The implementation of this solution is based on a service interface that provides the feature requested to the user. The back-end is based on a data-manager interface accessible from the service implementation. The object modelled is a pojo (plain old java objects) of "Journal".
